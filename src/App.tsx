@@ -11,7 +11,6 @@ function App() {
   interface weathers {
     name: string,
     dt: number,
-    timezone: string,
     main: {
       temp: number,
       temp_max: number,
