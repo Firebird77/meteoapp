@@ -8,6 +8,7 @@ function NextDays() {
     daily: [
       {
         dt: number,
+        timezone: string
         temp: {
           min: number,
           max: number
@@ -35,7 +36,7 @@ function NextDays() {
           {forecasts?.daily.map((day, index) => {
             return (
               <Fragment key={index}>
-                {index > 1 && index < 6 &&
+                {index > 0 && index < 5 &&
                   <Box3Container >
                     <div>
                       <header>{formatToLocalTime(day.dt)}</header>

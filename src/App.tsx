@@ -8,7 +8,7 @@ import { useQuery } from 'react-query';
 
 function App() {
 
-  interface weathers {
+  interface weathers{
     name: string,
     dt: number,
     main: {
@@ -20,7 +20,7 @@ function App() {
     wind: {
       speed: number
     },
-    weather: [
+    weather:[
       {
         icon: string,
         description: string,
