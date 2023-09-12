@@ -4,11 +4,10 @@ import GlobalStyles from './components/styles/Global';
 import NextDays from './components/NextDays';
 import { formatToLocalTime, icon } from './utils/Weather.utils';
 import { useQuery } from 'react-query';
+import { type } from 'os';
 
 
-function App() {
-
-  interface weathers{
+  type Forecast = {
     name: string,
     dt: number,
     main: {
@@ -28,7 +27,10 @@ function App() {
     ]
   }
 
-  const { isLoading, isError, data: weather } = useQuery<weathers>({
+
+function App() {
+
+  const { isLoading, isError, data: weather } = useQuery<Forecast>({
     queryKey: ["/2.5/weather?q=berlin&units=metric&appid="]
   })
 
