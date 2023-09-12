@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Box3, Box3Container } from './styles/NextDays.styles'
 import { useQuery } from 'react-query';
 import { formatToLocalTime, icon } from '../utils/Weather.utils';
@@ -34,7 +34,7 @@ function NextDays() {
         <Box3>
           {forecasts?.daily.map((day, index) => {
             return (
-              <div key={index}>
+              <Fragment key={index}>
                 {index > 1 && index < 6 &&
                   <Box3Container >
                     <div>
@@ -50,7 +50,7 @@ function NextDays() {
                       <p>{day.temp.max.toFixed()} / {day.temp.min.toFixed()} C</p>
                     </div>
                   </Box3Container>}
-              </div>
+              </Fragment>
             )
           })}
         </Box3>}
