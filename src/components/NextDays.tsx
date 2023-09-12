@@ -34,9 +34,9 @@ function NextDays() {
         <Box3>
           {forecasts?.daily.map((day, index) => {
             return (
-              <>
+              <div key={index}>
                 {index > 1 && index < 6 &&
-                  <Box3Container key={index}>
+                  <Box3Container >
                     <div>
                       <header>{formatToLocalTime(day.dt)}</header>
                     </div>
@@ -50,7 +50,7 @@ function NextDays() {
                       <p>{day.temp.max.toFixed()} / {day.temp.min.toFixed()} C</p>
                     </div>
                   </Box3Container>}
-              </>
+              </div>
             )
           })}
         </Box3>}
